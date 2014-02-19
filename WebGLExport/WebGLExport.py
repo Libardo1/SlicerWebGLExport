@@ -578,7 +578,8 @@ class WebGLExportLogic:
         if self.__copyFiles:
           fileName = os.path.split( file )[1]
           shutil.copy( file, os.path.join( self.__outputDir, fileName ) )
-          file = fileName
+        
+        file = os.path.split( file )[1]
 
         output += ' ' * 8 + mrmlId + '.file = "' + file + '";\n'
         output += ' ' * 8 + mrmlId + '.color = ' + color + ';\n'
